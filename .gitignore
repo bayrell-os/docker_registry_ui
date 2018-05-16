@@ -1,0 +1,6 @@
+# bower and nodejs modules dir
+/app/bower_components
+/app/node_modules
+
+# cache dir
+.cache
