@@ -1,0 +1,15 @@
+FROM bayrell/docker_registry_ui:stage0
+
+
+ADD app /srv/app
+ADD docker/supervisor.d/ /etc/supervisor.d/
+ADD docker/nginx/conf.d/ /etc/nginx/conf.d/
+ADD docker/nginx/nginx.conf /etc/nginx/nginx.conf
+ADD docker/run.sh /root/run.sh
+
+
+RUN  chmod +x /root/run.sh
+
+
+ENTRYPOINT ["/bin/bash"]
+CMD ["/root/run.sh"]
