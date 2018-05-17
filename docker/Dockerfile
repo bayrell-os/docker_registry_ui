@@ -16,4 +16,3 @@ RUN echo "[1] Install system components"; \
 EXPOSE 80
 ENTRYPOINT ["/bin/bash"]
 CMD ["/root/run.sh"]
-
