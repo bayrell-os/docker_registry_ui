@@ -29,15 +29,14 @@ Open in browser url http://localhost/ and enter to Docker Registry Web Interface
 Create volume and network:
 ```
 docker volume create repo_data
-docker network create -d bridge --subnet=172.20.0.0/16 localnetwork -o "com.docker.network.bridge.name"="localnetwork"
+docker network create -d bridge --subnet=172.20.0.0/16 dockernet -o "com.docker.network.bridge.name"="dockernet"
 ```
 
 
 Run repository:
 ```
-docker run -d -it --ip=172.20.10.25 --network="localnetwork" --restart=unless-stopped -v repo_data:/var/lib/registry  --name registry bayrell/docker_registry_ui
+docker run -d -it --ip=172.20.10.25 --network="dockernet" --restart=unless-stopped -v repo_data:/var/lib/registry  --name registry bayrell/docker_registry_ui
 ```
 
 
 Open in browser url http://172.20.10.25/ and enter to Docker Registry Web Interface.
- 
