@@ -1,6 +1,7 @@
 FROM registry:2.7
 
 ADD app /srv/app
+ADD docker/repositories /etc/apk/repositories
 ADD docker/supervisor.d/ /etc/supervisor.d/
 ADD docker/nginx/ /etc/nginx/
 ADD docker/run.sh /root/run.sh
