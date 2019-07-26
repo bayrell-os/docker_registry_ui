@@ -15,17 +15,17 @@ case "$1" in
 	;;
 
   docker)
-	docker build ./ -t bayrell/docker_registry_ui --file docker/Dockerfile
+	docker build ./ -t bayrell/docker_registry_ui --file stages/Dockerfile
 	cd ..
 	;;
   
   docker0)
-	docker build ./ -t bayrell/docker_registry_ui:stage0 --file docker/Dockerfile0
+	docker build ./ -t bayrell/docker_registry_ui:stage0 --file stages/Dockerfile0
 	cd ..
 	;;
 	
   docker1)
-	docker build ./ -t bayrell/docker_registry_ui:stage1 --file docker/Dockerfile1
+	docker build ./ -t bayrell/docker_registry_ui:stage1 --file stages/Dockerfile1
 	cd ..
 	;;
   
