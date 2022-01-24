@@ -15,7 +15,7 @@ docker volume create repo_data
 
 Start container:
 ```
-docker run -d -it --restart=unless-stopped -v repo_data:/var/lib/registry  -p 80:80 --name registry bayrell/docker_registry_ui
+docker run -d -it --restart=unless-stopped -v repo_data:/data  -p 80:80 --name registry bayrell/docker_registry_ui
 ```
 
 
@@ -35,7 +35,7 @@ docker network create -d bridge --subnet=172.20.0.0/16 dockernet -o "com.docker.
 
 Run repository:
 ```
-docker run -d -it --ip=172.20.10.25 --network="dockernet" --restart=unless-stopped -v repo_data:/var/lib/registry  --name registry bayrell/docker_registry_ui
+docker run -d -it --ip=172.20.10.25 --network="dockernet" --restart=unless-stopped -v repo_data:/data  --name registry bayrell/docker_registry_ui
 ```
 
 
