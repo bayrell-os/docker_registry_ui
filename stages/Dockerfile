@@ -1,4 +1,5 @@
-FROM registry:2.7.1
+ARG ARCH=
+FROM ${ARCH}registry:2.7.1
 
 RUN echo "[1] Install system components"; \
 	echo "" > /etc/apk/repositories; \
